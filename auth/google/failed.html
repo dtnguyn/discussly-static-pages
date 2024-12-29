@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication Failed</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .message-box {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 50px auto;
+        max-width: 400px;
+      }
+      h1 {
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-box">
+      <h1>Authentication Failed</h1>
+      <p>We were unable to authenticate your request.</p>
+      <p>Please close this page and try again.</p>
+    </div>
+
+    <script>
+      // Example: Extract error information from query parameters
+      const queryParams = new URLSearchParams(window.location.search);
+      const error = queryParams.get("error");
+      const errorDescription = queryParams.get("error_description");
+
+      if (error) {
+        console.error("Error:", error);
+        console.error("Description:", errorDescription);
+        // Optionally display error details for debugging (remove in production)
+      }
+    </script>
+  </body>
+</html>
